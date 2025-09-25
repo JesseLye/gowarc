@@ -12,7 +12,7 @@ import (
 	"sync"
 	"time"
 
-	warc "github.com/internetarchive/gowarc"
+	warc "github.com/JesseLye/gowarc"
 	"github.com/spf13/cobra"
 )
 

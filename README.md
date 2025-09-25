@@ -1,7 +1,7 @@
 # warc
 
-[![GoDoc](https://godoc.org/github.com/internetarchive/gowarc?status.svg)](https://godoc.org/github.com/internetarchive/gowarc)
-[![Go Report Card](https://goreportcard.com/badge/github.com/internetarchive/gowarc)](https://goreportcard.com/report/github.com/internetarchive/gowarc)
+[![GoDoc](https://godoc.org/github.com/JesseLye/gowarc?status.svg)](https://godoc.org/github.com/JesseLye/gowarc)
+[![Go Report Card](https://goreportcard.com/badge/github.com/JesseLye/gowarc)](https://goreportcard.com/report/github.com/JesseLye/gowarc)
 
 A Go library for reading and writing [WARC files](https://iipc.github.io/warc-specifications/), with advanced features for web archiving.
 
@@ -20,12 +20,12 @@ A Go library for reading and writing [WARC files](https://iipc.github.io/warc-sp
 ## Installation
 
 ```bash
-go get github.com/internetarchive/gowarc
+go get github.com/JesseLye/gowarc
 ```
 
 ## Usage
 
-This library's biggest feature is to provide a standard HTTP client through which you can execute requests that will be recorded automatically to WARC files. It's the basis of [Zeno](https://github.com/internetarchive/Zeno).
+This library's biggest feature is to provide a standard HTTP client through which you can execute requests that will be recorded automatically to WARC files. It's the basis of [Zeno](https://github.com/JesseLye/Zeno).
 
 ### HTTP Client with WARC Recording
 
@@ -33,7 +33,7 @@ This library's biggest feature is to provide a standard HTTP client through whic
 package main
 
 import (
-    "github.com/internetarchive/gowarc"
+    "github.com/JesseLye/gowarc"
     "net/http"
     "time"
 )

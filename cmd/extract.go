@@ -16,7 +16,7 @@ import (
 	"strings"
 	"time"
 
-	warc "github.com/internetarchive/gowarc"
+	warc "github.com/JesseLye/gowarc"
 	"github.com/remeh/sizedwaitgroup"
 	"github.com/spf13/cobra"
 )

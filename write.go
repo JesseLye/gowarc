@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/internetarchive/gowarc/pkg/spooledtempfile"
+	"github.com/JesseLye/gowarc/pkg/spooledtempfile"
 	"github.com/google/uuid"
 	"github.com/klauspost/compress/zstd"
 )

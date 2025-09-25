@@ -1,4 +1,4 @@
-module github.com/internetarchive/gowarc
+module github.com/JesseLye/gowarc
 
 go 1.24.2
 

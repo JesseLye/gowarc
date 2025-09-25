@@ -13,7 +13,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/internetarchive/gowarc/pkg/spooledtempfile"
+	"github.com/JesseLye/gowarc/pkg/spooledtempfile"
 	"github.com/klauspost/compress/zstd"
 	"github.com/ulikunitz/xz"
 )
