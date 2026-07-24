@@ -10,6 +10,7 @@ import (
 	"io"
 	"os"
 	"strconv"
+	"strings"
 	"sync"
 
 	"github.com/internetarchive/gowarc/pkg/spooledtempfile"
@@ -269,6 +270,8 @@ func (r *Reader) ReadRecord(opts ...ReadOpts) (*Record, error) {
 	warcVersion := string(warcVer)
 
 	header := NewHeader()
+	// Hackery to support multiple WARC-Protocol headers
+	warcProtocols := make([]string, 0)
 	for {
 		line, _, err := readUntilDelim(r.bufReader, []byte("\r\n"))
 		if err != nil {
@@ -278,8 +281,16 @@ func (r *Reader) ReadRecord(opts ...ReadOpts) (*Record, error) {
 			break
 		}
 		if key, value := splitKeyValue(string(line)); key != "" {
+			if key == "WARC-Protocol" {
+				warcProtocols = append(warcProtocols, value)
+				continue
+			}
 			header.Set(key, value)
 		}
+	}
+
+	if len(warcProtocols) > 0 {
+		header.Set("WARC-Protocol", strings.Join(warcProtocols, ", "))
 	}
 
 	length, err := strconv.ParseInt(header.Get("Content-Length"), 10, 64)
